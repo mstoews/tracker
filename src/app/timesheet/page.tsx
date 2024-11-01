@@ -9,7 +9,7 @@ import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import * as dataSource from './datasource.json';
 import "./page.css";
 import { registerLicense } from '@syncfusion/ej2-base';
-registerLicense('Ngo9BigBOggjHTQxAR8/V1NDaF5cWWtCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH9fdnVUQ2VYUUJwWkQ=');
+registerLicense('');
 
 const ScheduleToGrid = () => {
   const scheduleObj = useRef(null);
