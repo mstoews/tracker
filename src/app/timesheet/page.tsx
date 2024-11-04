@@ -49,7 +49,9 @@ const ScheduleToGrid = () => {
   <div className='flex container bg-center m-5 bg-slate-100'>
     <div className='flex'>
       <div className='flex-col'>
-        <div className='flex text-4xl'>Time Tracker : Matthew</div>
+      <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
+            Time Tracker Schedule
+          </p>
         <DropDownListComponent width='100%' id="scheduleview" popupHeight="350px" index={1} dataSource={viewOptions} fields={fields} change={onViewChange} value={currentView} placeholder="Select a view"/>
         <ScheduleComponent width='100%' height='800px' ref={scheduleObj} selectedDate={new Date(2024, 10, 1)} eventSettings={{ dataSource: data }} eventRendered={onEventRendered} currentView={currentView}>
           <ViewsDirective>
