@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.1.3",
     "@syncfusion/ej2-base": "^25.2.7",
     "@syncfusion/ej2-react-dropdowns": "^25.2.4",
+    "@syncfusion/ej2-react-gantt": "^25.2.4",
     "@syncfusion/ej2-react-schedule": "^25.2.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.6",

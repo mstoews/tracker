@@ -140,6 +140,11 @@ export function ApplicationLayout({
                 <ClockIcon/>
                 <SidebarLabel>Time Tracking</SidebarLabel>
               </SidebarItem>
+
+              <SidebarItem href="/gantt" current={pathname.startsWith('/gantt')}>
+                <ClockIcon/>
+                <SidebarLabel>Gantt Chart</SidebarLabel>
+              </SidebarItem>
               
               <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>
                 <Cog6ToothIcon />

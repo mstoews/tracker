@@ -18,7 +18,6 @@ import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 import * as dataSource from './datasource.json';
 import "./page.css";
-
 import { registerLicense } from '@syncfusion/ej2-base';
 registerLicense('Ngo9BigBOggjHTQxAR8/V1NBaF5cXmZCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH5ec3ZWRWheUkxzX0s=');
 
