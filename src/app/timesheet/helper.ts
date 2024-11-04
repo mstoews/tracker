@@ -159,7 +159,7 @@ export function getReminderEvents() {
     ];
     return reminderEvents;
 }
-export function generateResourceData(startId, endId, text) {
+export function generateResourceData(startId: any, endId: any, text: string) {
     let data = [];
     let colors = [
         '#ff8787', '#9775fa', '#748ffc', '#3bc9db', '#69db7c', '#fdd835', '#748ffc',

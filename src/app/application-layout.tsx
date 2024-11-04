@@ -134,15 +134,7 @@ export function ApplicationLayout({
                 <SidebarLabel>Home</SidebarLabel>
               </SidebarItem>
               
-              <SidebarItem href="/events" current={pathname.startsWith('/events')}>
-                <Square2StackIcon />
-                <SidebarLabel>Events</SidebarLabel>
-              </SidebarItem>
               
-              <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
-                <TicketIcon />
-                <SidebarLabel>Orders</SidebarLabel>
-              </SidebarItem>
               
               <SidebarItem href="/timesheet" current={pathname.startsWith('/timesheet')}>
                 <ClockIcon/>
@@ -163,7 +155,18 @@ export function ApplicationLayout({
                   {event.name}
                 </SidebarItem>
               ))}
-            </SidebarSection> */}
+            </SidebarSection> 
+            <SidebarItem href="/events" current={pathname.startsWith('/events')}>
+                <Square2StackIcon />
+                <SidebarLabel>Events</SidebarLabel>
+              </SidebarItem>
+              
+              <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
+                <TicketIcon />
+                <SidebarLabel>Orders</SidebarLabel>
+              </SidebarItem>
+            
+            */}
 
             <SidebarSpacer />
 

@@ -1,6 +1,16 @@
 'use client'
 import { useRef, useState } from 'react';
-import { ScheduleComponent, ViewsDirective, ViewDirective, Day, Week, WorkWeek, Month, Inject, Resize, DragAndDrop } from '@syncfusion/ej2-react-schedule';
+import { ScheduleComponent, 
+         ViewsDirective, 
+         ViewDirective, 
+         Day, 
+         Week, 
+         WorkWeek, 
+         Month, 
+         Inject, 
+         Resize, 
+         DragAndDrop } from '@syncfusion/ej2-react-schedule';
+
 import { applyCategoryColor } from './helper';
 
 import { extend } from '@syncfusion/ej2-base';
@@ -8,25 +18,31 @@ import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 import * as dataSource from './datasource.json';
 import "./page.css";
+
 import { registerLicense } from '@syncfusion/ej2-base';
-registerLicense('');
+registerLicense('Ngo9BigBOggjHTQxAR8/V1NBaF5cXmZCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH5ec3ZWRWheUkxzX0s=');
+
 
 const ScheduleToGrid = () => {
   const scheduleObj = useRef(null);
-  const data = extend([], dataSource.zooEventsData, null, true);
+  const data = extend([], dataSource.zooEventsData, '', true);
   const viewOptions = [
       { text: 'Day', value: 'Day' },
       { text: 'Week', value: 'Week' },
       { text: 'WorkWeek', value: 'WorkWeek' },
       { text: 'Month', value: 'Month' }
   ];
+  
   const fields = { text: 'text', value: 'value' };
+  
   const [currentView, setCurrentView] = useState("Week");
-  const onViewChange = (args) => {
+  
+  const onViewChange = (args: any) => {
       setCurrentView(args.value);
-      scheduleObj.current?.dataBind();
+      scheduleObj.current.dataBind();
   };
-  const onEventRendered = (args) => {
+  
+  const onEventRendered = (args: any) => {
       applyCategoryColor(args, scheduleObj.current?.currentView);
   };
   return (

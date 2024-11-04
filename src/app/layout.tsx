@@ -4,6 +4,10 @@ import type { Metadata } from 'next'
 import type React from 'react'
 import { ApplicationLayout } from './application-layout'
 
+import { registerLicense } from '@syncfusion/ej2-base';
+registerLicense('Ngo9BigBOggjHTQxAR8/V1NBaF5cXmZCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH5ec3ZWRWheUkxzX0s=');
+
+
 export const metadata: Metadata = {
   title: {
     template: '%s - Time Tracking',

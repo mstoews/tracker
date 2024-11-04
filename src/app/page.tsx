@@ -6,6 +6,10 @@ import { Select } from '@/components/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/table'
 import { getRecentOrders } from '@/data'
 
+import { registerLicense } from '@syncfusion/ej2-base';
+registerLicense('Ngo9BigBOggjHTQxAR8/V1NDaF5cWWtCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH5ec3ZWRGlfU0R/V0I=');
+
+
 export function Stat({ title, value, change }: { title: string; value: string; change: string }) {
   return (
     <div>
@@ -21,56 +25,82 @@ export function Stat({ title, value, change }: { title: string; value: string; c
 }
 
 export default async function Home() {
-  let orders = await getRecentOrders()
-
   return (
-    <>
-      <Heading>Good afternoon, Matthew</Heading>
-      <div className="mt-8 flex items-end justify-between">
-        <Subheading>Overview</Subheading>
-        <div>
-          <Select name="period">
-            <option value="last_week">Last week</option>
-            <option value="last_two">Last two weeks</option>
-            <option value="last_month">Last month</option>
-            <option value="last_quarter">Last quarter</option>
-          </Select>
+    <div className="bg-gray-900 py-24 sm:py-32">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <h2 className="text-base/7 font-semibold text-indigo-400">Deploy faster</h2>
+        <p className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          Everything you need to deploy your app
+        </p>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+          <div className="flex p-px lg:col-span-4">
+            <div className="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]">
+              <img
+                alt=""
+                src="https://tailwindui.com/plus/img/component-images/bento-02-releases.png"
+                className="h-80 object-cover object-left"
+              />
+              <div className="p-10">
+                <h3 className="text-sm/4 font-semibold text-gray-400">Releases</h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-white">Push to deploy</p>
+                <p className="mt-2 max-w-lg text-sm/6 text-gray-400">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus
+                  egestas sem pellentesque.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex p-px lg:col-span-2">
+            <div className="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 lg:rounded-tr-[2rem]">
+              <img
+                alt=""
+                src="https://tailwindui.com/plus/img/component-images/bento-02-integrations.png"
+                className="h-80 object-cover object-center"
+              />
+              <div className="p-10">
+                <h3 className="text-sm/4 font-semibold text-gray-400">Integrations</h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-white">Connect your favorite tools</p>
+                <p className="mt-2 max-w-lg text-sm/6 text-gray-400">
+                  Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex p-px lg:col-span-2">
+            <div className="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 lg:rounded-bl-[2rem]">
+              <img
+                alt=""
+                src="https://tailwindui.com/plus/img/component-images/bento-02-security.png"
+                className="h-80 object-cover object-center"
+              />
+              <div className="p-10">
+                <h3 className="text-sm/4 font-semibold text-gray-400">Security</h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-white">Advanced access control</p>
+                <p className="mt-2 max-w-lg text-sm/6 text-gray-400">
+                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex p-px lg:col-span-4">
+            <div className="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]">
+              <img
+                alt=""
+                src="https://tailwindui.com/plus/img/component-images/bento-02-performance.png"
+                className="h-80 object-cover object-left"
+              />
+              <div className="p-10">
+                <h3 className="text-sm/4 font-semibold text-gray-400">Performance</h3>
+                <p className="mt-2 text-lg font-medium tracking-tight text-white">Lightning-fast builds</p>
+                <p className="mt-2 max-w-lg text-sm/6 text-gray-400">
+                  Sed congue eros non finibus molestie. Vestibulum euismod augue vel commodo vulputate. Maecenas at
+                  augue sed elit dictum vulputate.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mt-4 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat title="Total revenue" value="$2.6M" change="+4.5%" />
-        <Stat title="Average order value" value="$455" change="-0.5%" />
-        <Stat title="Tickets sold" value="5,888" change="+4.5%" />
-        <Stat title="Pageviews" value="823,067" change="+21.2%" />
-      </div>
-      <Subheading className="mt-14">Recent orders</Subheading>
-      <Table className="mt-4 [--gutter:theme(spacing.6)] lg:[--gutter:theme(spacing.10)]">
-        <TableHead>
-          <TableRow>
-            <TableHeader>Order number</TableHeader>
-            <TableHeader>Purchase date</TableHeader>
-            <TableHeader>Customer</TableHeader>
-            <TableHeader>Event</TableHeader>
-            <TableHeader className="text-right">Amount</TableHeader>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {orders.map((order) => (
-            <TableRow key={order.id} href={order.url} title={`Order #${order.id}`}>
-              <TableCell>{order.id}</TableCell>
-              <TableCell className="text-zinc-500">{order.date}</TableCell>
-              <TableCell>{order.customer.name}</TableCell>
-              <TableCell>
-                <div className="flex items-center gap-2">
-                  <Avatar src={order.event.thumbUrl} className="size-6" />
-                  <span>{order.event.name}</span>
-                </div>
-              </TableCell>
-              <TableCell className="text-right">US{order.amount.usd}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </>
+    </div>
   )
 }
